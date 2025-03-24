@@ -1,0 +1,53 @@
+header {
+    background: linear-gradient(to bottom, #bfd8f1, #ffffff); /* Ajustado para un gradiente de arriba hacia abajo */
+    padding: 0.5rem;
+    height: 80px;
+}
+.nav{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    gap: 1.5rem;
+    margin-right: 1px;
+    box-sizing: border-box;
+    
+}
+.nav a{
+    color: #242323;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.logo{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+
+.sign-inButton, .sign-upButton{
+    background-color: #f5f5f5;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    transition: 0.3s;
+    margin: 10px;
+    border: 1px solid #2c2c2c;
+    border-radius: 5px;
+    
+    
+}
+.box-buttom{
+    
+    width: 22%;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    left: 700px;
+    box-sizing: border-box;
+    
+}
+
