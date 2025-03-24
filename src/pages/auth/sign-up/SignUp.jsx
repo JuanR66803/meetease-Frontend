@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
+
 const SignUp = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "", confirmPassword: "" });
     const [error, setError] = useState("");
@@ -65,5 +66,7 @@ const SignUp = () => {
         </div>
     );
 };
+console.log("🔗 VITE_API_URL:", import.meta.env.VITE_API_URL);
+
 
 export default SignUp;
