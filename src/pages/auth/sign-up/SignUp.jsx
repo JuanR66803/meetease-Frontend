@@ -2,7 +2,7 @@ import "./SignUp.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook, FaCalendarCheck } from "react-icons/fa";
+import { FaFacebook} from "react-icons/fa";
 
 const SignUp = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "", confirmPassword: "" });

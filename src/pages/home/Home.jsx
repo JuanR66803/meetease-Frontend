@@ -1,4 +1,5 @@
 import "./Home.css"
+import { NavLink } from "react-router";
 
 
 const Home = () =>{
@@ -11,7 +12,7 @@ const Home = () =>{
                         <p className="presentacion">Gestiona tus eventos, nosotros te ayudamos, únete a una gran comunidad y reserva ahora...</p>
                     </div>
                     <div className="img-container"> {/* Nueva div para agrupar los elementos */}
-                        <a href="/auth/sign-up" className="button-start">¡Comienza Ahora!</a>
+                        <NavLink className="button-start"to="/auth/sign-up"end> ¡Comienza Ahora!</NavLink>
                     </div>
                 </div>
             </>
