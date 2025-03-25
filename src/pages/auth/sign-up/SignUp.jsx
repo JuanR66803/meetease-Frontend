@@ -1,8 +1,8 @@
 import "./SignUp.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook, FaCalendarCheck } from "react-icons/fa";
 
 const SignUp = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "", confirmPassword: "" });
@@ -52,21 +52,51 @@ const SignUp = () => {
     };
 
     return (
-        <div className="sign-up">
-            <h2>Registrarse</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="name" placeholder="Nombre" onChange={handleChange} />
-                <input type="email" name="email" placeholder="Correo electrónico" onChange={handleChange} />
-                <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} />
-                <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" onChange={handleChange} />
-                <button className="button-up" type="submit">Registrarse</button>
-            </form>
-            {error && <p className="error">{error}</p>}
-            {success && <p className="success">{success}</p>}
+        <div className="sign-up-container">
+            {/* Sección Izquierda */}
+            <div className="left-section">
+                <div className="text-center">
+                    <h1>Regístrate</h1>
+                    <p>Adquiere tu mejor experiencia</p>
+                    
+                    <div className="auth-buttons">
+                        <button className="auth-button google-button">
+                            <FcGoogle className="icon" />
+                            Continuar con Google
+                        </button>
+
+                        <button className="auth-button facebook-button">
+                            <FaFacebook className="icon" />
+                            Continuar con Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Sección Derecha */}
+            <div className="right-section">
+                <div className="form-container">
+                    <h2 className="form-title">Registra todos los campos</h2>
+                    
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" name="name" placeholder="Nombre completo" className="input-field" onChange={handleChange} />
+                        <input type="email" name="email" placeholder="Email" className="input-field" onChange={handleChange} />
+                        <input type="password" name="password" placeholder="Contraseña" className="input-field" onChange={handleChange} />
+                        <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" className="input-field" onChange={handleChange} />
+                        <button type="submit" className="submit-button">Registrarse</button>
+                    </form>
+                    
+                    {error && <p className="error-message">{error}</p>}
+                    {success && <p className="success-message">{success}</p>}
+                    
+                    <div className="sign-in-link-container">
+                        ¿Ya tienes cuenta?
+                        <a href="/auth/sign-in" className="sign-in-link">Inicia sesión</a>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
-console.log("🔗 VITE_API_URL:", import.meta.env.VITE_API_URL);
-
 
 export default SignUp;

@@ -5,11 +5,11 @@ const Header = () => {
     return (
         <header>
             <nav className="nav">
-                <h1 className="logo">Logo</h1>
-                <NavLink to="/" end>
+                <img src="../public/logo.png" className="logo" alt="logo" />
+                <NavLink className="enlace" to="/" end>
                     Inicio
                 </NavLink>
-                <NavLink to="/eventos" end>
+                <NavLink className="enlace" to="/eventos" end>
                     Eventos
                 </NavLink>
                 <div className="box-buttom">
