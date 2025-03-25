@@ -2,8 +2,6 @@ import "./SignUp.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
 const SignUp = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "", confirmPassword: "" });
     const [error, setError] = useState("");
@@ -28,7 +26,7 @@ const SignUp = () => {
         }
 
         try {
-            const response = await fetch("https://meetease-backend.vercel.app/api/register", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -41,7 +39,7 @@ const SignUp = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                throw new Error(data.message);
+                throw new Error(data.message || "Error al registrar usuario.");
             }
 
             setSuccess("Usuario registrado con éxito. Redirigiendo...");
@@ -66,7 +64,7 @@ const SignUp = () => {
         </div>
     );
 };
-console.log("🔗 VITE_API_URL:", import.meta.env.VITE_API_URL);
 
+console.log("🔗 VITE_API_URL:", import.meta.env.VITE_API_URL);
 
 export default SignUp;
