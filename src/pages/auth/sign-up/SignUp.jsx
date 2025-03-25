@@ -1,8 +1,7 @@
 import "./SignUp.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-
+import.meta.env; // Ensure environment variables are loaded
 
 const SignUp = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "", confirmPassword: "" });
@@ -66,7 +65,5 @@ const SignUp = () => {
         </div>
     );
 };
-console.log("🔗 VITE_API_URL:", import.meta.env.VITE_API_URL);
-
 
 export default SignUp;
