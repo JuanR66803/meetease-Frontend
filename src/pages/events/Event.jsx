@@ -1,4 +1,4 @@
-import EventForm from "./eventForm";
+import EventForm from "./EventForm";
 import "./Event.css"; 
 
 const Event = () => {
