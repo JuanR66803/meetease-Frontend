@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const API_BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://meetease-backend.vercel.app/register"
+    ? "https://meetease-backend.vercel.app/api/events/register"
     : "http://localhost:3000/api/events/register";
 
 const EventForm = () => {
