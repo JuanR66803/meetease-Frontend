@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-const API_BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://meetease-backend.vercel.app/api/events/register"
-    : "http://localhost:3000/api/events/register";
 
 const EventForm = () => {
     const [formData, setFormData] = useState({
@@ -37,7 +33,7 @@ const EventForm = () => {
         });
 
         try {
-            const response = await fetch(API_BASE_URL, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/Api/Event`, {
                 method: "POST",
                 body: formDataToSend,
             });
