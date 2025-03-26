@@ -9,7 +9,7 @@ const Header = () => {
                 <NavLink className="enlace" to="/" end>
                     Inicio
                 </NavLink>
-                <NavLink className="enlace" to="/event" end>
+                <NavLink className="enlace" to="/event/register" end>
                     Eventos
                 </NavLink>
                 <div className="box-buttom">
