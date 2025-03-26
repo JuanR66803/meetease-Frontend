@@ -1,21 +1,21 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // Corregido el import
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/home/Home.jsx";
 import Layout from "./layout/Layout.jsx";
 import SignIn from "./pages/auth/sign-in/SignIn.jsx";
 import SignUp from "./pages/auth/sign-up/SignUp.jsx";
 import Event from "./pages/events/Event.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx"; // Asegúrate de que sea un export default
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { AuthProvider } from "./context/AuthContext";
 
 createRoot(document.getElementById("root")).render(
-  <AuthProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <AuthProvider>
       <Layout>
         <Routes>
           <Route index path="/" element={<Home />} />
-          
+
           {/* Rutas protegidas */}
           <Route path="event" element={<ProtectedRoute />}>
             <Route path="register" element={<Event />} />
@@ -30,6 +30,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
       </Layout>
-    </BrowserRouter>
-  </AuthProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );
+
