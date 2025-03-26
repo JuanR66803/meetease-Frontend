@@ -33,7 +33,7 @@ const EventForm = () => {
         });
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/Events`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/Events/registerEvent`, {
                 method: "POST",
                 body: formDataToSend,
             });
