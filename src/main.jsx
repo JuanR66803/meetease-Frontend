@@ -6,7 +6,7 @@ import Home from './pages/home/Home.jsx'
 import Layout from './layout/Layout.jsx'
 import SignIn from './pages/auth/sign-in/SignIn.jsx'
 import SignUp from './pages/auth/sign-up/SignUp.jsx'
-import Event from "./pages/events/event.jsx";
+import Event from "./pages/events/Event.jsx";
 
 
 createRoot(document.getElementById('root')).render(
