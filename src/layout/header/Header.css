@@ -108,3 +108,21 @@ header {
         margin-top: 10px;
     }
 }
+.user-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.logout-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #c9302c;
+}
+

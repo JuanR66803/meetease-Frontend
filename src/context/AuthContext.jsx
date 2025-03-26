@@ -1,44 +1,28 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-
-const AuthContext = createContext(null);
+const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(() => {
-        try {
-            return JSON.parse(localStorage.getItem("user")) || null;
-        } catch {
-            return null;
-        }
-    });
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate(); // Para redirigir tras logout
 
     useEffect(() => {
-        try {
-            const storedUser = localStorage.getItem("user");
-            if (storedUser) {
-                setUser(JSON.parse(storedUser));
-            }
-        } catch (error) {
-            console.error("Error al leer usuario de localStorage", error);
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
         }
     }, []);
 
     const login = (userData) => {
-        try {
-            localStorage.setItem("user", JSON.stringify(userData));
-            setUser(userData);
-        } catch (error) {
-            console.error("Error al guardar usuario en localStorage", error);
-        }
+        setUser(userData);
+        localStorage.setItem("user", JSON.stringify(userData));
     };
 
     const logout = () => {
-        try {
-            localStorage.removeItem("user");
-            setUser(null);
-        } catch (error) {
-            console.error("Error al eliminar usuario de localStorage", error);
-        }
+        setUser(null);
+        localStorage.removeItem("user");
+        navigate("/auth/sign-in"); // Redirigir al login tras cerrar sesión
     };
 
     return (
@@ -48,5 +32,7 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-// ✅ Exporta el hook useAuth
-export const useAuth = () => useContext(AuthContext);
+// eslint-disable-next-line react-refresh/only-export-components
+export const useAuth = () => {
+    return useContext(AuthContext);
+};
