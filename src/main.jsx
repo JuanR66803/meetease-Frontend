@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="event">
-          <Route path="register" element={<Event/ >}
+          <Route path="register" element={<Event/ >} />
         </Route>
         <Route path="auth">
           <Route path="sign-in" element={<SignIn />} />
