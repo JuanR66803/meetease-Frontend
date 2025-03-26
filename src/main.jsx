@@ -6,12 +6,15 @@ import Home from './pages/home/Home.jsx'
 import Layout from './layout/Layout.jsx'
 import SignIn from './pages/auth/sign-in/SignIn.jsx'
 import SignUp from './pages/auth/sign-up/SignUp.jsx'
+import Event from "./pages/events/event.jsx";
+
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Layout>
       <Routes>
         <Route index path="/" element={<Home />} />
+        <Route path="event" element={<Event />} />
         <Route path="auth">
           <Route path="sign-in" element={<SignIn />} />
           <Route path="sign-up" element={<SignUp />} />
